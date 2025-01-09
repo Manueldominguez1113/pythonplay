@@ -15,6 +15,15 @@ class App:
         current_question = self.questions[self.current_question_index][0]
         self.ques_label = tk.Label(self.root, text=current_question)
         self.ques_label.grid(row=2, column=3)
+        options =  self.questions[self.current_question_index][1:len(self.questions)]
+        for option, index in zip(options, range(len(options))):
+            self.option_buttons.append(tk.Radiobutton(
+                self.questions_container,
+                text=option,
+                value=index+1,
+                variable=self.user_answer,
+            ))
+            self.option_buttons[-1].grid(row=index, column=1)
     def next(self):
         print("Hello World")
 
@@ -35,6 +44,8 @@ class App:
 
         self.next_button = tk.Button(self.next_con, text="Next", command=self.next)
         self.next_button.grid()
+        self.option_buttons = []
+        self.user_answer = tk.IntVar()
 
 if __name__ == '__main__':
     App()

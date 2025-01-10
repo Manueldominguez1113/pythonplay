@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from pytube import YouTube
+from pytubefix import YouTube
 
 import tkinter as tk
 
@@ -29,7 +29,6 @@ class App:
             self.conversion(url, label)
 
     def conversion(self, url, label):
-        print("we in conversion boyz")
         try:
             # setting up the url string
             yt = YouTube(url.get())
@@ -88,7 +87,7 @@ class App:
 
 
         self.root.bind("<Return>", lambda event: self.check_url(url,output_label))
-        self.root.bind("<Escape>", self.exit)
+        self.root.bind("<Escape>", lambda event : self.exit())
 
 
 if __name__ == '__main__':

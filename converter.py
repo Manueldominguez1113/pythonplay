@@ -48,7 +48,7 @@ class App:
         super().__init__()
         self.root = tk.Tk()
         self.root.title("YouTube Converter")
-        self.root.geometry("800x200")
+        self.root.geometry("600x200")
         self.build_gui()
         self.root.resizable(False, False)
         self.root.mainloop()

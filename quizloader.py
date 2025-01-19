@@ -1,7 +1,7 @@
 import csv
 
 def get_questions(filename):
-    print("Reading questions from " + filename)
+    # print("Reading questions from " + filename)
     try:
         with open(filename,'r') as csvfile:
             reader = csv.reader(csvfile)

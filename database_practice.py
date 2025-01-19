@@ -1,5 +1,5 @@
 import sqlite3
-DATABASE_Path = "school.db"
+DATABASE_Path = "city.db"
 conn = sqlite3.connect(DATABASE_Path)
 cursor = conn.cursor()
 
